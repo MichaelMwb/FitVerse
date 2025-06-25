@@ -727,8 +727,8 @@
     "category": "strength",
     "level": "beginner",
     "description": "Lie back on a flat bench. Using a medium width grip (a grip that creates a 90-degree angle in the middle of the movement between the forearms and the upper arms), lift the bar from the rack and hold it straight over you with your arms locked. This will be your starting position.\nFrom the starting position, breathe in and begin coming down slowly until the bar touches your middle chest.\nAfter a brief pause, push the bar back to the starting position as you breathe out. Focus on pushing the bar using your chest muscles. Lock your arms and squeeze your chest in the contracted position at the top of the motion, hold for a second and then start coming down slowly again. Tip: Ideally, lowering the weight should take about twice as long as raising it.\nRepeat the movement for the prescribed amount of repetitions.\nWhen you are done, place the bar back in the rack.",
-    "has_animation": false,
-    "animation_url": null
+    "has_animation": true,
+    "animation_url": "/static/gifs/BenchPress.gif"
   },
   {
     "id": "Barbell_Curl",
@@ -1354,8 +1354,8 @@
     "category": "strength",
     "level": "beginner",
     "description": "Holding a barbell with a pronated grip (palms facing down), bend your knees slightly and bring your torso forward, by bending at the waist, while keeping the back straight until it is almost parallel to the floor. Tip: Make sure that you keep the head up. The barbell should hang directly in front of you as your arms hang perpendicular to the floor and your torso. This is your starting position.\nNow, while keeping the torso stationary, breathe out and lift the barbell to you. Keep the elbows close to the body and only use the forearms to hold the weight. At the top contracted position, squeeze the back muscles and hold for a brief pause.\nThen inhale and slowly lower the barbell back to the starting position.\nRepeat for the recommended amount of repetitions.",
-    "has_animation": false,
-    "animation_url": null
+    "has_animation": true,
+    "animation_url": "/static/gifs/BentOverRow.gif"
   },
   {
     "id": "Bent_Over_Dumbbell_Rear_Delt_Raise_With_Head_On_Bench",
@@ -2868,8 +2868,8 @@
     "category": "strength",
     "level": "beginner",
     "description": "Lie back on a flat bench. Using a close grip (around shoulder width), lift the bar from the rack and hold it straight over you with your arms locked. This will be your starting position.\nAs you breathe in, come down slowly until you feel the bar on your middle chest. Tip: Make sure that - as opposed to a regular bench press - you keep the elbows close to the torso at all times in order to maximize triceps involvement.\nAfter a second pause, bring the bar back to the starting position as you breathe out and push the bar using your triceps muscles. Lock your arms in the contracted position, hold for a second and then start coming down slowly again. Tip: It should take at least twice as long to go down than to come up.\nRepeat the movement for the prescribed amount of repetitions.\nWhen you are done, place the bar back in the rack.",
-    "has_animation": false,
-    "animation_url": null
+    "has_animation": true,
+    "animation_url": "/static/gifs/BenchPress.gif"
   },
   {
     "id": "Close-Grip_Dumbbell_Press",
@@ -4165,8 +4165,8 @@
     "category": "strength",
     "level": "intermediate",
     "description": "Stand up straight while holding a dumbbell on each hand (palms facing the side of your legs).\nPlace the right foot on the elevated platform. Step on the platform by extending the hip and the knee of your right leg. Use the heel mainly to lift the rest of your body up and place the foot of the left leg on the platform as well. Breathe out as you execute the force required to come up.\nStep down with the left leg by flexing the hip and knee of the right leg as you inhale. Return to the original standing position by placing the right foot of to next to the left foot on the initial position.\nRepeat with the right leg for the recommended amount of repetitions and then perform with the left leg.",
-    "has_animation": false,
-    "animation_url": null
+     "has_animation": true,
+    "animation_url": "/static/gifs/BenchStepUps.gif"
   },
   {
     "id": "Dumbbell_Tricep_Extension_-Pronated_Grip",
@@ -11619,8 +11619,8 @@
     "category": "strength",
     "level": "beginner",
     "description": "Set the barbell attached to the smith machine to a height that is about 2 inches below your knees.\nBend your knees slightly and bring your torso forward, by bending at the waist, while keeping the back straight until it is almost parallel to the floor. Tip: Make sure that you keep the head up.\nNow grasp the barbell using an overhand (pronated) grip and unlock it from the smith machine rack. Then let it hang directly in front of you as your arms hang extended perpendicular to the floor and your torso. This is your starting position.\nWhile keeping the torso stationary, lift the barbell as you breathe out, keeping the elbows close to the body and not doing any force with the forearm other than holding the weights. On the top contracted position, squeeze the back muscles and hold for a second.\nSlowly lower the weight again to the starting position as you inhale.\nRepeat for the recommended amount of repetitions.",
-    "has_animation": false,
-    "animation_url": null
+    "has_animation": true,
+    "animation_url": "/static/gifs/BentOverRow.gif"
   },
   {
     "id": "Smith_Machine_Calf_Raise",
@@ -13620,8 +13620,8 @@
     "category": "stretching",
     "level": "beginner",
     "description": "To begin, lie down on the floor or an exercise mat with your back pressed against the floor. Your arms should be lying across your sides with the palms facing down.\nYour legs should be touching each other. Slowly elevate your legs up in the air until they are almost perpendicular to the floor with a slight bend at the knees. Your feet should be parallel to the floor.\nMove your arms so that they are fully extended at a 45 degree angle from the floor. This is the starting position.\nWhile keeping your lower back pressed against the floor, slowly lift your torso and use your hands to try and touch your toes. Remember to exhale while perform this part of the exercise.\nSlowly begin to lower your torso and arms back down to the starting position while inhaling. Remember to keep your arms straight out pointing towards your toes.\nRepeat for the recommended amount of repetitions.",
-    "has_animation": false,
-    "animation_url": null
+    "has_animation": true,
+    "animation_url": "/static/gifs/AbToeTouches.gif"
   },
   {
     "id": "Torso_Rotation",
@@ -14224,8 +14224,8 @@
     "category": "strength",
     "level": "intermediate",
     "description": "Lie back on a flat bench with feet firm on the floor. Using a wide, pronated (palms forward) grip that is around 3 inches away from shoulder width (for each hand), lift the bar from the rack and hold it straight over you with your arms locked. The bar will be perpendicular to the torso and the floor. This will be your starting position.\nAs you breathe in, come down slowly until you feel the bar on your middle chest.\nAfter a second pause, bring the bar back to the starting position as you breathe out and push the bar using your chest muscles. Lock your arms and squeeze your chest in the contracted position, hold for a second and then start coming down slowly again. Tip: It should take at least twice as long to go down than to come up.\nRepeat the movement for the prescribed amount of repetitions.",
-    "has_animation": false,
-    "animation_url": null
+    "has_animation": true,
+    "animation_url": "/static/gifs/BenchPress.gif"
   },
   {
     "id": "Wide-Grip_Decline_Barbell_Bench_Press",
