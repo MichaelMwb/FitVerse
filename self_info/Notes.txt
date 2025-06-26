@@ -1,0 +1,7 @@
+Cable Sumo not yet put in form, location, and naming issues
+Barbell curl - idk why I wrote this
+Dumbell curl and hammer curl simutameously - animate
+close grip lat pulldown and one arm lat pull
+One arm cable and wide attachment row - animate^ above
+reverse curl with barbell not implemented
+Animate reverse dumbell curl
