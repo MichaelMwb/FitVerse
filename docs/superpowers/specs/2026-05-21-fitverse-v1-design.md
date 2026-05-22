@@ -36,11 +36,15 @@ Gender selection affects app theme (colors).
 - TikTok-style vertical scrolling
 
 ### Tab 2: Friends (Daily Check-ins)
-- BeReal-style photo-only posts
-- See mutual friends' check-ins
-- Camera button to post your gym photo
-- Timeline of gym photos from people you follow
-- No captions, just photos
+- Check-in feed showing friends' gym activity
+- Two check-in types:
+  1. **Photo check-in** - BeReal-style gym photo (requires location verification)
+  2. **Location-only check-in** - Just "I'm at the gym" without photo
+- Location verification via:
+  - Google Places API or similar for known gyms
+  - User-populated gyms (verified after N users confirm)
+- Camera button to post check-in
+- Timeline shows all check-in types from people you follow
 
 ### Tab 3: AI Coach
 - Chat interface (user types, gets responses)

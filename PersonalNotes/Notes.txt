@@ -5,3 +5,106 @@ close grip lat pulldown and one arm lat pull
 One arm cable and wide attachment row - animate^ above
 reverse curl with barbell not implemented
 Animate reverse dumbell curl
+
+so when the user loads it should show the app 
+  logo while everythign is booting up but while 
+  they arent logged in, it should prompt a 
+  signup/info page with necessaryt health info
+  if they are it should load with them being
+  kept logged in . Then it should have 4 or 5 
+  main models/pages that users can go into one 
+  is a social media section where they can 
+  scroll and see curated gym content. one is for
+  their freidns where they can see mutual 
+  friedns check ins and post their own daily, 
+  then they should have one with the AI fitness 
+  coach with workout for the day and they can 
+  talk to about how to do studff and health and 
+  stuff like that. It also should have a goal 
+  page where it tracks progress calories 
+  consistency wieght done etc - so like an all 
+  in one 
+
+   Splash Screen
+
+  - SX logo centered on dark background
+  - Logo pulses or fades in
+  - 1-2 second delay while checking auth state
+  - Transitions to either Onboarding or Main App
+
+  Navigation
+
+  - Bottom Tab Bar with 4 icons: Social, Friends,
+  Coach, Goals
+  - Top Right on all tabs: Gear icon (Profile
+  dropdown)
+  - Tab bar uses your blue/purple theme, active
+  tab highlighted
+
+  ---
+  Technical Stack
+
+  ┌────────────────┬───────────────────────────┐
+  │   Component    │        Technology         │
+  ├────────────────┼───────────────────────────┤
+  │ UI             │ SwiftUI, iOS 17+          │
+  ├────────────────┼───────────────────────────┤
+  │ Local Data     │ SwiftData                 │
+  ├────────────────┼───────────────────────────┤
+  │ Networking     │ URLSession + async/await  │
+  │                │ (stubbed services)        │
+  ├────────────────┼───────────────────────────┤
+  │ Authentication │ Local for now (Keychain   │
+  │                │ for secure storage)       │
+  ├────────────────┼───────────────────────────┤
+  │ Architecture   │ MVVM with Services        │
+  ├────────────────┼───────────────────────────┤
+  │ AI Integration │ ChatGPT/Claude API later, │
+  │                │  mock now                 │
+  ├────────────────┼───────────────────────────┤
+  │ Subscription   │ RevenueCat or native IAP  │
+  │                │ later                     │
+  └────────────────┴───────────────────────────┘
+
+  ---
+  File Structure
+
+  FitVerse/
+  ├── App/
+  │   └── FitVerseApp.swift
+  ├── Models/
+  │   ├── User.swift
+  │   ├── Workout.swift
+  │   ├── Exercise.swift
+  │   ├── CheckIn.swift
+  │   └── Goal.swift
+  ├── ViewModels/
+  │   ├── SocialViewModel.swift
+  │   ├── FriendsViewModel.swift
+  │   ├── CoachViewModel.swift
+  │   └── GoalsViewModel.swift
+  ├── Views/
+  │   ├── Onboarding/
+  │   ├── Social/
+  │   ├── Friends/
+  │   ├── Coach/
+  │   ├── Goals/
+  │   └── Components/
+  ├── Services/
+  │   ├── AuthService.swift
+  │   ├── UserService.swift
+  │   ├── WorkoutService.swift
+  │   ├── SocialService.swift
+  │   ├── AIService.swift
+  │   ├── GoalService.swift
+  │   └── SubscriptionService.swift
+  ├── Resources/
+  │   ├── custom_exercises.json
+  │   ├── animations/
+  │   ├── static/
+  │   └── Assets.xcassets
+  └── Extensions/
+      └── Theme.swift (colors)
+
+  ---
+  Does this structure work for you?
