@@ -1,20 +1,40 @@
 # Xcode user-specific files
 *.xcuserstate
+*.xcuserdatad/
 xcuserdata/
-
-# Build products
+*.xcscmblueprint
+*.xccheckout
 build/
 DerivedData/
+*.hmap
 *.ipa
-
-# CocoaPods (if used later)
-Pods/
+*.dSYM.zip
+*.dSYM
 
 # Swift Package Manager
 .build/
+.swiftpm/
 Package.resolved
+
+# CocoaPods
+Pods/
+
+# Carthage
+Carthage/Build/
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
 
 # Temporary files
 *.swp
+*.swo
 *~
-.DS_Store
