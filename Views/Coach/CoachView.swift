@@ -69,7 +69,7 @@ struct CoachView: View {
                                 .foregroundColor(.white)
                         )
                     
-                    Text("Exercise \(exercise.exerciseId)")
+                    Text(exercise.notes ?? exercise.exerciseId)
                         .font(.subheadline)
                         .foregroundColor(.white)
                     
@@ -175,7 +175,7 @@ struct MessageBubble: View {
             VStack(alignment: message.isFromUser ? .trailing : .leading, spacing: 4) {
                 Text(message.content)
                     .font(.subheadline)
-                    .foregroundColor(message.isFromUser ? .white : .white)
+                    .foregroundColor(message.isFromUser ? .white : Color(hex: "D1D5DB"))
                     .padding(.horizontal, 16)
                     .padding(.vertical, 10)
                     .background(

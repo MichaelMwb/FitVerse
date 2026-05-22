@@ -18,20 +18,36 @@ struct OnboardingStep3Physical: View {
                     Text("Height (cm)")
                         .font(.caption)
                         .foregroundColor(.gray)
-                    
+
                     TextField("170", text: $viewModel.height)
                         .textFieldStyle(DarkTextFieldStyle())
                         .keyboardType(.decimalPad)
                 }
-                
+
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Weight (kg)")
                         .font(.caption)
                         .foregroundColor(.gray)
-                    
+
                     TextField("70", text: $viewModel.weight)
                         .textFieldStyle(DarkTextFieldStyle())
                         .keyboardType(.decimalPad)
+                }
+            }
+
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Birth Year")
+                    .font(.caption)
+                    .foregroundColor(.gray)
+
+                TextField("1995", text: $viewModel.birthYear)
+                    .textFieldStyle(DarkTextFieldStyle())
+                    .keyboardType(.numberPad)
+
+                if !viewModel.birthYear.isEmpty && !FormValidator.isValidBirthYear(viewModel.birthYearInt) {
+                    Text("You must be at least 13 years old to use FitVerse.")
+                        .font(.caption)
+                        .foregroundColor(.red)
                 }
             }
             

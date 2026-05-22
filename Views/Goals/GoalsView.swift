@@ -225,11 +225,13 @@ struct GoalCard: View {
     
     private var progressView: some View {
         let values = goal.history.suffix(7).map { $0.value }
+        let maxValue = values.max() ?? 1
         return HStack(spacing: 4) {
             ForEach(Array(values.enumerated()), id: \.offset) { index, value in
+                let normalized = maxValue > 0 ? CGFloat(value / maxValue) * 26 : 4
                 RoundedRectangle(cornerRadius: 2)
-                    .fill(index == values.count - 1 ? Color(hex: "4A90D9") : Color.hex("4A90D9").opacity(0.4))
-                    .frame(height: CGFloat(value) > 0 ? min(CGFloat(value) / 10 * 30, 30) : 4)
+                    .fill(index == values.count - 1 ? Color(hex: "4A90D9") : Color(hex: "4A90D9").opacity(0.4))
+                    .frame(height: max(normalized, 4))
             }
         }
         .frame(height: 30)
