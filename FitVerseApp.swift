@@ -79,11 +79,11 @@ struct RootView: View {
     }
     
     private func checkAuthState() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            if services.authService.isAuthenticated() {
-                if let user = services.authService.getCurrentUser() {
-                    authState.setAuthenticated(user)
-                }
+        Task {
+            try? await Task.sleep(nanoseconds: 1_500_000_000)
+            if services.authService.isAuthenticated(),
+               let user = services.authService.getCurrentUser() {
+                authState.setAuthenticated(user)
             }
             authState.isCheckingAuth = false
             showSplash = false

@@ -15,6 +15,7 @@ final class User {
     var injuries: [String]
     var isPremium: Bool
     var aiUsageCount: Int
+    var birthYear: Int
     var createdAt: Date
 
     init(
@@ -30,6 +31,7 @@ final class User {
         injuries: [String] = [],
         isPremium: Bool = false,
         aiUsageCount: Int = 0,
+        birthYear: Int = 0,
         createdAt: Date = Date()
     ) {
         self.id = id
@@ -44,6 +46,7 @@ final class User {
         self.injuries = injuries
         self.isPremium = isPremium
         self.aiUsageCount = aiUsageCount
+        self.birthYear = birthYear
         self.createdAt = createdAt
     }
 }
