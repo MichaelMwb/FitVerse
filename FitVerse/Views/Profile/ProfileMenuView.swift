@@ -61,9 +61,11 @@ struct ProfileMenuView: View {
             .scrollContentBackground(.hidden)
             .background(Color(hex: "0F0F1A"))
             .navigationTitle("Settings")
+            #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
+            #endif
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .automatic) {
                     Button("Close") {
                         dismiss()
                     }

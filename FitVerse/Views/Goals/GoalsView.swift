@@ -23,13 +23,13 @@ struct GoalsView: View {
             }
             .navigationTitle("Goals")
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
+                ToolbarItem(placement: .automatic) {
                     Text("FitVerse")
                         .font(.headline)
                         .foregroundColor(.white)
                 }
-                
-                ToolbarItem(placement: .navigationBarTrailing) {
+
+                ToolbarItem(placement: .automatic) {
                     Button(action: { viewModel.showAddGoal = true }) {
                         Image(systemName: "plus")
                             .foregroundColor(Color(hex: "4A90D9"))
@@ -83,7 +83,7 @@ struct GoalsView: View {
                 .font(.headline)
                 .foregroundColor(.white)
             
-            Text("Add your first goal to start tracking your progress\!")
+            Text("Add your first goal to start tracking your progress!")
                 .font(.subheadline)
                 .foregroundColor(.gray)
                 .multilineTextAlignment(.center)
@@ -167,7 +167,7 @@ struct GoalCard: View {
                 }
             }
             
-            if \!goal.history.isEmpty {
+            if !goal.history.isEmpty {
                 progressView
             }
         }
@@ -183,7 +183,9 @@ struct GoalCard: View {
                     
                     TextField("Enter new value", text: $newValue)
                         .textFieldStyle(DarkTextFieldStyle())
+                        #if os(iOS)
                         .keyboardType(.decimalPad)
+                        #endif
                     
                     Button(action: {
                         if let value = Double(newValue) {
@@ -212,7 +214,7 @@ struct GoalCard: View {
                 .padding()
                 .background(Color(hex: "0F0F1A"))
                 .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
+                    ToolbarItem(placement: .automatic) {
                         Button("Cancel") {
                             showUpdateSheet = false
                         }

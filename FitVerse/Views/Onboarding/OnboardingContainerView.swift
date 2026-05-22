@@ -101,7 +101,7 @@ struct OnboardingContainerView: View {
                         .cornerRadius(12)
                 }
             }
-            .disabled(\!viewModel.isValid || isCreatingUser)
+            .disabled(!viewModel.isValid || isCreatingUser)
             .opacity(viewModel.isValid ? 1 : 0.5)
         }
         .padding(.top, 24)

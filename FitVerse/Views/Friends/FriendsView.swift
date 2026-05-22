@@ -23,13 +23,13 @@ struct FriendsView: View {
             }
             .navigationTitle("Friends")
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
+                ToolbarItem(placement: .automatic) {
                     Text("FitVerse")
                         .font(.headline)
                         .foregroundColor(.white)
                 }
-                
-                ToolbarItem(placement: .navigationBarTrailing) {
+
+                ToolbarItem(placement: .automatic) {
                     Button(action: { viewModel.showCheckInSheet = true }) {
                         Image(systemName: "camera.fill")
                             .foregroundColor(Color(hex: "4A90D9"))
@@ -81,7 +81,7 @@ struct FriendsView: View {
                 .font(.headline)
                 .foregroundColor(.white)
             
-            Text("Be the first to check in at your gym\!")
+            Text("Be the first to check in at your gym!")
                 .font(.subheadline)
                 .foregroundColor(.gray)
                 .multilineTextAlignment(.center)
@@ -150,8 +150,8 @@ struct CheckInCard: View {
                     .foregroundColor(.gray)
             }
             
-            if checkIn.isPhotoCheckIn, let photoData = checkIn.photoData, let uiImage = UIImage(data: photoData) {
-                Image(uiImage: uiImage)
+            if checkIn.isPhotoCheckIn, let photoData = checkIn.photoData, let nsImage = NSImage(data: photoData) {
+                Image(nsImage: nsImage)
                     .resizable()
                     .scaledToFill()
                     .frame(height: 200)

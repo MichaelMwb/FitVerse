@@ -21,7 +21,9 @@ struct OnboardingStep3Physical: View {
 
                     TextField("170", text: $viewModel.height)
                         .textFieldStyle(DarkTextFieldStyle())
+                        #if os(iOS)
                         .keyboardType(.decimalPad)
+                        #endif
                 }
 
                 VStack(alignment: .leading, spacing: 8) {
@@ -31,7 +33,9 @@ struct OnboardingStep3Physical: View {
 
                     TextField("70", text: $viewModel.weight)
                         .textFieldStyle(DarkTextFieldStyle())
+                        #if os(iOS)
                         .keyboardType(.decimalPad)
+                        #endif
                 }
             }
 
@@ -42,7 +46,9 @@ struct OnboardingStep3Physical: View {
 
                 TextField("1995", text: $viewModel.birthYear)
                     .textFieldStyle(DarkTextFieldStyle())
+                    #if os(iOS)
                     .keyboardType(.numberPad)
+                    #endif
 
                 if !viewModel.birthYear.isEmpty && !FormValidator.isValidBirthYear(viewModel.birthYearInt) {
                     Text("You must be at least 13 years old to use FitVerse.")
