@@ -1,0 +1,20 @@
+# Xcode user-specific files
+*.xcuserstate
+xcuserdata/
+
+# Build products
+build/
+DerivedData/
+*.ipa
+
+# CocoaPods (if used later)
+Pods/
+
+# Swift Package Manager
+.build/
+Package.resolved
+
+# Temporary files
+*.swp
+*~
+.DS_Store
