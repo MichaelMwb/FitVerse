@@ -29,7 +29,7 @@ struct SocialView: View {
             }
             .navigationTitle("Discover")
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
+                ToolbarItem(placement: .automatic) {
                     Text("FitVerse")
                         .font(.headline)
                         .foregroundColor(.white)

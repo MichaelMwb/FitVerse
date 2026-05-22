@@ -48,7 +48,7 @@ struct OnboardingStep2HomeGym: View {
                 TextField("Custom gym name", text: $viewModel.homeGym)
                     .textFieldStyle(DarkTextFieldStyle())
                     .onChange(of: viewModel.homeGym) { _, newValue in
-                        if \!newValue.isEmpty {
+                        if !newValue.isEmpty {
                             viewModel.selectedGymIndex = -1
                         }
                     }

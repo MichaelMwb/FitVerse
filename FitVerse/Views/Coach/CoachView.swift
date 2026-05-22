@@ -29,7 +29,7 @@ struct CoachView: View {
             }
             .navigationTitle("AI Coach")
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
+                ToolbarItem(placement: .automatic) {
                     Text("FitVerse")
                         .font(.headline)
                         .foregroundColor(.white)
@@ -102,7 +102,7 @@ struct CoachView: View {
                                 .font(.system(size: 48))
                                 .foregroundColor(Color(hex: "4A90D9"))
                             
-                            Text("Ask me anything about fitness\!")
+                            Text("Ask me anything about fitness!")
                                 .font(.headline)
                                 .foregroundColor(.white)
                             
@@ -180,11 +180,11 @@ struct MessageBubble: View {
                     .padding(.vertical, 10)
                     .background(
                         message.isFromUser
-                            ? LinearGradient(
+                            ? AnyShapeStyle(LinearGradient(
                                 colors: [Color(hex: "4A90D9"), Color(hex: "8B5CF6")],
                                 startPoint: .leading,
                                 endPoint: .trailing
-                            )
+                            ))
                             : AnyShapeStyle(Color(hex: "1A1A2E"))
                     )
                     .cornerRadius(16)
@@ -194,7 +194,7 @@ struct MessageBubble: View {
                     .foregroundColor(.gray)
             }
             
-            if \!message.isFromUser {
+            if !message.isFromUser {
                 Spacer(minLength: 60)
             }
         }

@@ -18,7 +18,7 @@ struct AddGoalView: View {
                     
                     ScrollView {
                         LazyVStack(spacing: 12) {
-                            ForEach(GoalType.allCases.filter { $0 \!= .custom }, id: \.self) { goalType in
+                            ForEach(GoalType.allCases.filter { $0 != .custom }, id: \.self) { goalType in
                                 Button(action: {
                                     onAdd(goalType)
                                     dismiss()
@@ -54,9 +54,11 @@ struct AddGoalView: View {
                 }
             }
             .navigationTitle("Add Goal")
+            #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
+            #endif
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
+                ToolbarItem(placement: .automatic) {
                     Button("Cancel") {
                         dismiss()
                     }

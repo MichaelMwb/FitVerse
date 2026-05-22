@@ -21,8 +21,10 @@ struct OnboardingStep1NameEmail: View {
                 TextField("Email", text: $viewModel.email)
                     .textFieldStyle(DarkTextFieldStyle())
                     .textContentType(.emailAddress)
+                    #if os(iOS)
                     .keyboardType(.emailAddress)
                     .autocapitalization(.none)
+                    #endif
                 
                 SecureField("Password", text: $viewModel.password)
                     .textFieldStyle(DarkTextFieldStyle())
@@ -33,7 +35,7 @@ struct OnboardingStep1NameEmail: View {
                     .textContentType(.newPassword)
             }
             
-            if \!viewModel.password.isEmpty {
+            if !viewModel.password.isEmpty {
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Password must:")
                         .font(.caption)

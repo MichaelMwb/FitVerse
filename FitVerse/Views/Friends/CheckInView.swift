@@ -5,27 +5,27 @@ struct CheckInView: View {
     let userId: UUID
     let userName: String
     let onCheckIn: (GymLocation, Data?, Bool) -> Void
-    
+
     @Environment(\.dismiss) var dismiss
     @State private var selectedGym: GymLocation?
     @State private var selectedImage: PhotosPickerItem?
     @State private var photoData: Data?
-    @State private var showingImage: UIImage?
+    @State private var showingImageData: Data?
     @State private var checkInType: CheckInType = .photo
-    
+
     enum CheckInType {
         case photo
         case locationOnly
     }
-    
+
     let gymOptions = GymLocation.mockGyms()
-    
+
     var body: some View {
         NavigationStack {
             ZStack {
                 Color(hex: "0F0F1A")
                     .ignoresSafeArea()
-                
+
                 ScrollView {
                     VStack(spacing: 24) {
                         // Check-in type picker
@@ -33,7 +33,7 @@ struct CheckInView: View {
                             Text("Check-in Type")
                                 .font(.subheadline)
                                 .foregroundColor(.gray)
-                            
+
                             HStack(spacing: 12) {
                                 Button(action: { checkInType = .photo }) {
                                     VStack {
@@ -48,7 +48,7 @@ struct CheckInView: View {
                                     .background(checkInType == .photo ? Color(hex: "4A90D9") : Color(hex: "1A1A2E"))
                                     .cornerRadius(12)
                                 }
-                                
+
                                 Button(action: { checkInType = .locationOnly }) {
                                     VStack {
                                         Image(systemName: "location.fill")
@@ -64,17 +64,18 @@ struct CheckInView: View {
                                 }
                             }
                         }
-                        
+
                         // Photo section
                         if checkInType == .photo {
                             VStack(alignment: .leading, spacing: 12) {
                                 Text("Add Photo")
                                     .font(.subheadline)
                                     .foregroundColor(.gray)
-                                
+
                                 PhotosPicker(selection: $selectedImage, matching: .images) {
-                                    if let showingImage = showingImage {
-                                        Image(uiImage: showingImage)
+                                    if let showingImageData = showingImageData,
+                                       let nsImage = NSImage(data: showingImageData) {
+                                        Image(nsImage: nsImage)
                                             .resizable()
                                             .scaledToFill()
                                             .frame(height: 200)
@@ -98,34 +99,33 @@ struct CheckInView: View {
                                 }
                                 .onChange(of: selectedImage) { _, newItem in
                                     Task {
-                                        if let data = try? await newItem?.loadTransferable(type: Data.self),
-                                           let image = UIImage(data: data) {
-                                            showingImage = image
+                                        if let data = try? await newItem?.loadTransferable(type: Data.self) {
+                                            showingImageData = data
                                             photoData = data
                                         }
                                     }
                                 }
                             }
                         }
-                        
+
                         // Gym selection
                         VStack(alignment: .leading, spacing: 12) {
                             Text("Select Your Gym")
                                 .font(.subheadline)
                                 .foregroundColor(.gray)
-                            
+
                             ForEach(gymOptions) { gym in
                                 Button(action: { selectedGym = gym }) {
                                     HStack {
                                         Image(systemName: "mappin.circle.fill")
                                             .foregroundColor(Color(hex: "4A90D9"))
-                                        
+
                                         Text(gym.name)
                                             .foregroundColor(.white)
                                             .font(.body)
-                                        
+
                                         Spacer()
-                                        
+
                                         if selectedGym?.id == gym.id {
                                             Image(systemName: "checkmark.circle.fill")
                                                 .foregroundColor(Color(hex: "4A90D9"))
@@ -137,13 +137,13 @@ struct CheckInView: View {
                                 }
                             }
                         }
-                        
+
                         // Verifying notice
                         if let gym = selectedGym {
                             HStack(spacing: 8) {
                                 Image(systemName: gym.isVerified ? "checkmark.shield.fill" : "exclamationmark.triangle.fill")
                                     .foregroundColor(gym.isVerified ? .green : .orange)
-                                
+
                                 Text(gym.isVerified ? "Verified location" : "Unverified location (trust: \(gym.trustCount) users)")
                                     .font(.caption)
                                     .foregroundColor(gym.isVerified ? .green : .orange)
@@ -157,22 +157,24 @@ struct CheckInView: View {
                 }
             }
             .navigationTitle("Check In")
+            #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
+            #endif
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
+                ToolbarItem(placement: .automatic) {
                     Button("Cancel") {
                         dismiss()
                     }
                     .foregroundColor(.gray)
                 }
-                
-                ToolbarItem(placement: .navigationBarTrailing) {
+
+                ToolbarItem(placement: .automatic) {
                     Button("Post") {
                         if let gym = selectedGym {
                             onCheckIn(gym, photoData, checkInType == .photo)
                         }
                     }
-                    .foregroundColor(selectedGym \!= nil ? Color(hex: "4A90D9") : .gray)
+                    .foregroundColor(selectedGym != nil ? Color(hex: "4A90D9") : .gray)
                     .disabled(selectedGym == nil)
                 }
             }
